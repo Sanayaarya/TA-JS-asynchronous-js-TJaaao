@@ -74,8 +74,9 @@ console.log('three');
 
 ```js
 console.log('one');
-console.log('two');
+
 console.log('three');
+console.log('two');
 ```
 
 8. Write a function named `asyncForEach` that is similar to `forEach`. But `asyncForEach` is asynchronous in nature rather than synchronous.
@@ -110,4 +111,12 @@ Convert the code below in such way that the output should be the one below
 console.log('First Call');
 [1, 2, 3, 4, 5].firEach((num) => console.log(num));
 console.log('Last Call');
+
+Array.prototype.firEach = function(){
+  for ( let i = 0 ; i < this.length ; i++ ){
+   setTimeout(()=>{
+      console.log(this[i]);
+    },0);
+  }
+}
 ```
