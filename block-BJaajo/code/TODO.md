@@ -82,7 +82,12 @@ console.log('two');
 8. Write a function named `asyncForEach` that is similar to `forEach`. But `asyncForEach` is asynchronous in nature rather than synchronous.
 
 ```js
-funciton asyncForEach(){
+funciton asyncForEach(array){
+  //
+  for ( let i = 0 ; i < array.length ; i++ ){
+    setTimeout(()=>console.log(array[i]),0);
+  }
+
   //
 }
 //  Output of the function below should be
