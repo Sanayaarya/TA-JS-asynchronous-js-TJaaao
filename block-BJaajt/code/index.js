@@ -32,26 +32,34 @@ function handleChange(event){
   }
 }  
 
+// add keyup event on input element
 input.addEventListener('keyup' , handleChange)
 
-// Random Cat
-
+// select image and button elements
 const imgage = document.querySelector('.img-cat');
-const reload = document.querySelector('button');
-reload.addEventListener('click', (e) => {
-  console.log(e)
+const button = document.querySelector('button');
+
+// add click event listener on button
+button.addEventListener('click', (e) => {
   let xhr = new XMLHttpRequest();
+
+  // get a random cat image from an api
   xhr.open(
     'GET',
     'https://api.thecatapi.com/v1/images/search?limit=1&size=full'
   );
+
+  // show this cat image in the ui
   xhr.onload = function () {
-    let imageData = JSON.parse(xhr.response);
+    let imageData = JSON.parse(xhr.response);  
     imgage.src = imageData[0].url;
   };
+
+  // log the error message in case api call get filed
   xhr.onerror = function () {
     console.log('Something went wrong...');
   };
+  
   xhr.send();
 });
 
