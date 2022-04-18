@@ -15,6 +15,6 @@ function inputHandle(event){
         xhr.send();
         event.target.value = '';
     }
-}
+};
 
 input.addEventListener('keyup', inputHandle);
