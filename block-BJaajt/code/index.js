@@ -61,6 +61,6 @@ button.addEventListener('click', (e) => {
   };
   
   xhr.send();
-});
+})
 
 
