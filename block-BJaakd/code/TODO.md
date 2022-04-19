@@ -2,18 +2,45 @@
 
 ```js
 // Your code
+let promise = new Promise((resolve,reject)=>{
+  setTimeout(()=>{
+    resolve('promise resolve')
+  },1000)
+}).then((data)=>{
+   console.log(data)
+})
 ```
 
 2. Create another promise. Now have it reject with a value of `Rejected Promise!` without using `setTimeout`. Print the contents of the promise after it has been rejected by passing console.log to `.catch`
 
 ```js
 // Your code
+let promise = new Promise((resolve,reject)=>{
+  setTimeout(()=>{
+    resolve('promise resolve')
+  },1000)
+}).then((data)=>{
+   console.log(data)
+}).catch((error)=>{
+  console.log(error)
+})
 ```
 
 3. Create another promise. Now have it reject with a value of `Rejected Promise!` without using `setTimeout`. Print the contents of the promise after it has been rejected by passing console.log to `.catch` and also use `.finally` to log message `Promise Settled!`.
 
 ```js
 // Your code
+let promise = new Promise((resolve,reject)=>{
+  setTimeout(()=>{
+    resolve('promise resolve')
+  },1000)
+}).then((data)=>{
+   console.log(data)
+}).catch((error)=>{
+  console.log(error)
+}).finally((promise settled)=>{
+
+})
 ```
 
 4. What will be the output of the code below.
@@ -30,10 +57,27 @@ Promise.resolve().then(() => console.log('C'));
 console.log('D');
 ```
 
+
 5. Write a function named `wait` that accepts `time` in ms returns a promise. The promise gets resolved after given time.
 
 ```js
 // Your code
+// let promise = new Promise((resolve,reject)=>{
+//   setTimeout(()=>{
+//     resolve('promise resolve')
+//   },time)
+// }).then((data)=>{
+//    console.log(data)
+// })
+function time (n){
+  return new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+      resolve('promise resolve')
+    },n)
+  }).then((data)=>{
+    console.log(data)
+  })
+}
 ```
 
 6. Do the following:
@@ -47,6 +91,17 @@ console.log('D');
 
 ```js
 // Your code
+let pro = new Promise((resolve, reject)=>{
+  setTimeout(()=>{
+    resolve()
+  },0)
+}).then(()=>{
+   console.log(10)
+}).then(()=>{
+   console.log(10+100)
+}).catch(()=>{
+  console.log(error)
+})
 ```
 
 7. Do the following:
@@ -59,6 +114,19 @@ console.log('D');
 
 ```js
 // Your code
+function g(){
+  let arr = ['A']
+  let obj = {};
+  return new Promise((resolve,reject)=>{
+     resolve(obj);
+  }).then(()=>{
+    arr.concat('B');
+        for(let i= 0; i<arr.length; i++){
+          obj[i]= arr[i]
+        }
+        console.log(obj);
+  })
+}
 ```
 
 8. Do the following:
@@ -70,6 +138,17 @@ console.log('D');
 
 ```js
 // Your code
+let first = new Promise ((resolve,reject)=>{
+   setTimeout(()=>{
+     resolve(1)
+   },0)
+}).then(()=>{
+  console.log(2)
+}).then(()=>{
+  console.log(3)
+}).then(()=>{
+  console.log(4)
+})
 ```
 
 9. Do the following:
@@ -81,6 +160,17 @@ console.log('D');
 
 ```js
 // Your code
+let first = new Promise ((resolve,reject)=>{
+   setTimeout(()=>{
+     resolve(1)
+   },0)
+}).then(()=>{
+  console.log('first',2)
+}).then(()=>{
+  console.log('first' ,3)
+}).then(()=>{
+  console.log('first', 4)
+})
 ```
 
 10. Try to understand the difference between the problem 8 and 9. Write your observation.
@@ -94,4 +184,14 @@ console.log('D');
 
 ```js
 // Your code
+let john = new Promise ((resolve,reject)=>{
+   setTimeout(()=>{
+     resolve(1)
+   },0)
+}).then(()=>{
+  console.log('Arya')
+}).then(()=>{
+  console.log('Bran')
+})
+
 ```
