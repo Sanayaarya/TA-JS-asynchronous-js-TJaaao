@@ -192,6 +192,6 @@ let john = new Promise ((resolve,reject)=>{
   console.log('Arya')
 }).then(()=>{
   console.log('Bran')
-})
+});
 
 ```
