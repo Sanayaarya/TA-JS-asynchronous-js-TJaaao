@@ -148,7 +148,7 @@ let first = new Promise ((resolve,reject)=>{
   console.log(3)
 }).then(()=>{
   console.log(4)
-})
+});
 ```
 
 9. Do the following:
