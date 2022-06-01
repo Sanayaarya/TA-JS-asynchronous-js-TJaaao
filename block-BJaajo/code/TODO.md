@@ -123,5 +123,5 @@ Array.prototype.firEach = function(){
       console.log(this[i]);
     },0);
   }
-};
+}
 ```
